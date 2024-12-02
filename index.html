@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Xmas</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ffcccc, #ff9999);
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px #ff0000;
+        }
+        .gift {
+            margin: 20px auto;
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        }
+        .gift:before, .gift:after {
+            content: '';
+            position: absolute;
+            background: #fff;
+        }
+        .gift:before {
+            width: 10px;
+            height: 100px;
+            left: 45px;
+        }
+        .gift:after {
+            width: 100px;
+            height: 10px;
+            top: 45px;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        .message {
+            display: none;
+            font-size: 1.5rem;
+            color: #fff;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gửi sườn xào chua ngọt 🎄</h1>
+        <h2>Bạn nhỏ đừng giận anh nữa mòoooooo, anh có quà cho em ở dưới đó</h2>
+        <div class="gift" onclick="playAudio()"></div>
+        <p class="message">Enjoy the holiday music! 🎵</p>
+        <audio id="xmasAudio" src="meow.m4a"></audio>
+    </div>
+
+    <script>
+        function playAudio() {
+            const audio = document.getElementById('xmasAudio');
+            const message = document.querySelector('.message');
+            audio.play();
+            message.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
